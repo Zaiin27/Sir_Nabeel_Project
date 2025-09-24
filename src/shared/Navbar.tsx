@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/Button'
@@ -23,14 +23,9 @@ import {
 } from '@/utils/constants'
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const [mounted, setMounted] = useState<boolean>(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set())
   const [openSubDropdowns, setOpenSubDropdowns] = useState<Set<string>>(new Set())
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -72,41 +67,10 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   const handleLinkClick: LinkClickHandler = (href: string): void => {
     console.log(`Navigating to: ${href}`);
-    // Add your navigation logic here
+ 
   }
 
-  if (!mounted) {
-    return (
-      <header className="bg-white shadow-sm">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-28">
-            {/* Logo Section - Placeholder for SSR */}
-            <div className="flex items-center">
-              <div className="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
-            </div>
-            {/* Right Section - Placeholder for SSR */}
-            <div className="flex flex-col items-end space-y-3">
-              <div className="flex items-center space-x-3">
-                <div className="h-8 w-16 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-8 w-24 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-8 w-28 bg-gray-200 animate-pulse rounded"></div>
-              </div>
-              <div className="flex items-center space-x-8">
-                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-4 w-12 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
-                <div className="h-5 w-5 bg-gray-200 animate-pulse rounded"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    )
-  }
+ 
 
   return (
     <>

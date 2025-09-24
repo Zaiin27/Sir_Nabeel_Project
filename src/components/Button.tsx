@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { ButtonProps } from '@/utils/types';
 
@@ -19,11 +19,6 @@ const Button: React.FC<ExtendedButtonProps> = ({
   variant = 'default',
   text
 }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Join Us button variant
   if (variant === 'joinUs') {
@@ -67,14 +62,6 @@ const Button: React.FC<ExtendedButtonProps> = ({
   
   const combinedClasses = `${baseClasses} ${variantClasses} ${className}`;
 
-  if (!mounted) {
-    return (
-      <div className={`${combinedClasses} animate-pulse`}>
-        <div className="w-4 h-4 bg-gray-300 rounded"></div>
-        <span className="text-transparent bg-gray-300 rounded">{label}</span>
-      </div>
-    );
-  }
 
   return (
     <button 
