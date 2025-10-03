@@ -23,7 +23,7 @@ const InsightsSection: React.FC = () => {
       id: 'hong-kong',
       category: 'Case Studies',
       title: 'Hong Kong: Strengthening Audit Frameworks Across Borders for Industrial Conglomerate',
-      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/09/hong-kong-china-1024x683.jpg',
+      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/09/79793c8e-88e8-45a3-9fdc-b9f283357eeb-1024x588.jpg',
       location: 'Hong Kong'
     },
     {
